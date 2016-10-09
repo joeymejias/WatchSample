@@ -1,0 +1,8 @@
+<resources>
+
+    <!--<style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--<item name="windowActionBar">true</item>-->
+        <!--<item name="windowNoTitle">false</item>-->
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">false</item>-->
+    <!--</style>-->
+</resources>

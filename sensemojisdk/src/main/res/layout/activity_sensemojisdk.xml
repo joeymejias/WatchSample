@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/action_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+            <ToggleButton
+                android:id="@+id/toggle_button"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/device_toggle"
+                android:textOff=""
+                android:textOn=""/>
+            <ImageView
+                android:id="@+id/sensemoji_button"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/sensemoji"
+                android:clickable="false"/>
+            <TextView
+                android:id="@+id/express_yourself_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sensemoji_button"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/express_yourself"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/countdown_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black50"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/sensemoji_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/sensemoji"
+            android:textAllCaps="false"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sensemoji_header"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/powered_by"/>
+
+        <TextView
+            android:id="@+id/countdown_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/countdown_message"
+            android:textAllCaps="false"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/countdown_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/countdown_message"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:text="@string/loading"
+            android:textAllCaps="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/result_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/submit_emotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@mipmap/ic_done_white" />
+
+        <TextView
+            android:id="@+id/emotion_results"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="7dp"
+            android:text="@string/all_done"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/emotion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emotion_results"
+            android:layout_centerHorizontal="true"
+            android:text="@string/all_done_results"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/emotion_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emotion_text"
+            android:layout_centerHorizontal="true"
+            android:textSize="22sp"/>
+
+        <com.mopub.mobileads.MoPubView
+            android:id="@+id/adview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <RelativeLayout
+            android:id="@+id/native_adview_container"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:background="@drawable/ad_border">
+
+            <TextView
+                android:id="@+id/native_adview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/ad_title"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/native_adview_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/native_adview_title"
+                android:text="@string/ad_text"
+                android:textSize="14sp"/>
+
+            <RelativeLayout
+                android:id="@+id/native_adview_sponsored_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:id="@+id/native_adview_sponsored_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sponsored"
+                    android:textSize="12sp"/>
+
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/native_adview_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_below="@id/native_adview_text"
+                android:layout_above="@id/native_adview_sponsored_container"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/sensemoji"/>
+
+            <ImageView
+                android:id="@+id/native_adview_main"
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/native_adview_text"
+                android:layout_above="@id/native_adview_sponsored_container"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/sensemoji"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emotion_value"
+            android:layout_above="@id/adview">
+
+            <ImageView
+                android:id="@+id/imoji"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/imoji"/>
+
+            <ImageView
+                android:id="@+id/emotion"
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/sensemoji"/>
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/sensemoji"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@android:drawable/ic_menu_share"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </ViewFlipper>
+
+</RelativeLayout>

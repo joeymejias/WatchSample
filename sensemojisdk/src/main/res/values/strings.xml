@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Sensemoji</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="facebook_app_id">1084954274882955</string>
+
+    <string name="express_yourself">Go ahead break the Internet. Express yourself</string>
+    <string name="loading">Loading...</string>
+    <string name="countdown_message">Show us how you feel in:</string>
+    <string name="sensemoji">Sensemoji</string>
+    <string name="all_done">All Done!</string>
+    <string name="all_done_results">Are we sensing you?</string>
+    <string name="oops">Oops!</string>
+    <string name="oops_results">We couldn\'t sense you.\n Here\'s what\'s trending</string>
+    <string name="anger">Anger: %d%%</string>
+    <string name="disgust">Disgust: %d%%</string>
+    <string name="fear">Fear: %d%%</string>
+    <string name="joy">Joy: %d%%</string>
+    <string name="neutral">Neutral: %d%%</string>
+    <string name="sadness">Sadness: %d%%</string>
+    <string name="surprise">Surprise: %d%%</string>
+
+    <string name="process_error">An error has occured processing your image. Please try again.</string>
+
+    <string name="ad_title">Native Ad Title</string>
+    <string name="ad_text">Native Ad Text.  Native Ad Text. Native Ad Text.</string>
+    <string name="sponsored">sponsored</string>
+</resources>

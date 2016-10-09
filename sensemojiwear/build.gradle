@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'sensemoji'
+            keyPassword 'giants86'
+            storeFile file('../sensemojisdk/sensemoji.keystore.jks')
+            storePassword 'giants86'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "io.affect.sensemoji"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.google.android.support:wearable:1.3.0'
+    compile 'com.google.android.gms:play-services-wearable:8.3.0'
+    compile 'watch.nudge.gesturelibrary:gesturelibrary:0.8.10'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'io.reactivex:rxjava:1.0.16'
+}

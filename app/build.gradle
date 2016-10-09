@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'sensemoji'
+            keyPassword 'giants86'
+            storeFile file('../sensemojisdk/sensemoji.keystore.jks')
+            storePassword 'giants86'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "io.affect.sensemoji"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 8
+        versionName "1.0.8"
+        multiDexEnabled true
+    }
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "2048M"
+        jumboMode = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile project(':sensemojisdk')
+    wearApp project(':sensemojiwear')
+    compile 'com.android.support:multidex:1.0.1'
+    //    compile 'com.google.android.gms:play-services:8.3.0'
+}
